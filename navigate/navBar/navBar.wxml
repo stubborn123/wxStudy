@@ -1,0 +1,11 @@
+<!--components/navBar/navBar.wxml-->
+<!-- WXML 自定义顶部状态栏div结构 -->
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <view class='nav-title' style='top:{{statusBarHeight}}px'>{{navbarData.title}}</view>
+  <view class='navigation-container'>
+    <view class='navigate-item' catchtap='backPrePage'><image src='/images/arrow-navigate-icon.png'></image></view>
+    <view class='navigate-line'></view>
+    <view class='navigate-item' catchtap='backHome'><image src='/images/home-navigate-icon.png'></image></view>
+  </view>
+</view>
+<view class="empty_custom" style="padding-top:{{statusBarHeight}}px"></view>

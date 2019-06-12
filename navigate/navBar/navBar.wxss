@@ -1,0 +1,65 @@
+/* components/navBar/navBar.wxss */
+.custom{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 45px;
+  background: #FFFFFF;
+  z-index: 999;
+  
+}
+.flex_center{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.custom text{
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  max-width: 280rpx;
+}
+.empty_custom{
+  height: 45px;
+  width: 100%;
+}
+.navigation-container{
+  display: flex;
+  box-sizing: border-box;
+  margin-left: 30rpx;
+  padding: 0 25rpx;
+  justify-content: space-between;
+
+  width:174rpx;
+  height:64rpx;
+  border-radius:32rpx;
+  border:0.45px solid rgba(204,204,204,1);
+}
+.custom image{
+  width: 100%;
+  height: 100%;
+}
+.navigate-item{
+  width: 42rpx;
+  height: 42rpx;
+  margin: auto 0;
+}
+/* 标题要居中 */
+.nav-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  max-width: 400rpx;
+  line-height: 45px;
+  font-size: 37rpx;
+}
+.navigate-line{
+  width:0.25px;
+  height:37rpx;
+  background:#ECECEC;
+  margin: auto 0;
+}

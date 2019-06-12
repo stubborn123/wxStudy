@@ -1,0 +1,93 @@
+<!--pages/coupon/coupon.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class='myCoupon'>
+  <view id='normal' bindtap='toChoose' class='{{choosen === "normal" ? "selected" : "" }}'>
+    <view>待使用</view>
+  </view>
+  <view id='expire' bindtap='toChoose' class='{{choosen === "expire" ? "selected" : "" }}'>
+    <view>已过期</view>
+  </view>
+</view>
+<block wx:if="{{choosen === 'normal'}}">
+   <block wx:if="{{list.length<=0 &&normalList.length<=0}}">
+    <view class='no-coupons'>暂无优惠券</view>
+  </block>
+  <view class='conetext'>
+    <block wx:for="{{normalList}}" wx:key="item" wx:for-index="index">
+      <view id="{{item.id}}" class='c-item {{item.bgClass}}'bindtap='toUseCoupons'>
+        <view class='left'>
+          <block wx:if="{{item.cardType == 1}}">
+            <view class='category'>省{{item.reduceCost/100}}</view>
+          </block>
+          <block wx:if="{{item.cardType == 2}}">
+            <view class='category'>{{item.discount/10}}折</view>
+          </block>
+          <view class='c-type'>{{item.cardTypeStr}}</view>
+        </view>
+        <view class='right'>
+          <view class='coupon-detail'>
+          <view class='title' style='font-size:38rpx'>{{item.name}}</view>
+           <block wx:if="{{item.cardType == 1 && item.leastCost > 0}}">
+             <view class='desc'>订单满{{item.leastCost/100}}元可用</view>
+           </block>
+           <block wx:if='{{item.cardType == 2 && item.maxDiscount > 0}}'>
+              <view class='desc'>最高减免{{item.maxDiscount/100}}元</view>
+           </block>
+          </view>
+          
+         <block wx:if="{{(item.endTime)}}">
+          <view class='endTime'>有效期至：{{item.endTimeStr}}</view>
+         </block> 
+        </view>
+        <block wx:if="{{item.userCouponStatus != states.available.code}}">
+          <view class='tag'>
+            <image src='{{states[states.list[item.userCouponStatus]].icon}}'></image> 
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</block>
+<!-- 过期的优惠券 -->
+<block wx:if="{{choosen === 'expire'}}">
+  <block wx:if="{{expireList.length<=0}}">
+    <view class='no-coupons'>暂无优惠券</view>
+  </block>
+  <view class='conetext'>
+    <block wx:for="{{expireList}}" wx:key="item" wx:for-index="index">
+      <view id="{{item.id}}" class='c-item {{item.bgClass}}'bindtap='toUseCoupons'>
+        <view class='left'>
+          <block wx:if="{{item.cardType == 1}}">
+            <view class='category'>省{{item.reduceCost/100}}</view>
+          </block>
+          <block wx:if="{{item.cardType == 2}}">
+            <view class='category'>{{item.discount/10}}折</view>
+          </block>
+          <view class='c-type'>{{item.cardTypeStr}}</view>
+        </view>
+        <view class='right'>
+          <view class='coupon-detail'>
+            <view class='title' style='font-size:38rpx'>{{item.name}}</view>
+           <block wx:if="{{item.cardType == 1 && item.leastCost > 0}}">
+             <view class='desc'>订单满{{item.leastCost/100}}元可用</view>
+           </block>
+           <block wx:if="{{item.cardType == 2 && item.maxDiscount > 0}}">
+            <view class='desc'>最高减免{{item.maxDiscount/100}}元</view>
+           </block>
+          </view>
+          
+         <block wx:if="{{(item.endTime)}}">
+          <view class='endTime'>有效期至：{{item.endTimeStr}}</view>
+         </block> 
+        </view>
+        <block wx:if="{{item.userCouponStatus != states.available.code}}">
+          <view class='tag'>
+            <image src='{{states[states.list[item.userCouponStatus]].icon}}'></image> 
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</block>
+
+
