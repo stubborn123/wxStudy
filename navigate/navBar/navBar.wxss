@@ -58,7 +58,7 @@
   font-size: 37rpx;
 }
 .navigate-line{
-  width:0.25px;
+  width:1px;
   height:37rpx;
   background:#ECECEC;
   margin: auto 0;

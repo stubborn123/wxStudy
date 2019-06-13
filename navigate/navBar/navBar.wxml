@@ -3,8 +3,10 @@
 <view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
   <view class='nav-title' style='top:{{statusBarHeight}}px'>{{navbarData.title}}</view>
   <view class='navigation-container'>
-    <view class='navigate-item' catchtap='backPrePage'><image src='/images/arrow-navigate-icon.png'></image></view>
-    <view class='navigate-line'></view>
+    <block wx:if="{{!navbarData.shareFlag === true}}">
+      <view class='navigate-item' catchtap='backPrePage'><image src='/images/arrow-navigate-icon.png'></image></view>
+      <view class='navigate-line'></view>
+    </block>
     <view class='navigate-item' catchtap='backHome'><image src='/images/home-navigate-icon.png'></image></view>
   </view>
 </view>

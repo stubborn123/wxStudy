@@ -9,9 +9,10 @@ Component({
     }
   },
   data: {
-    statusBarHeight: app.globalData.statusBarHeight
+    statusBarHeight: app.globalData.statusBarHeight,
   },
   attached: function () {
+    console.log(this.data.navbarData)
   },
   methods: {
     // 返回上一页面
