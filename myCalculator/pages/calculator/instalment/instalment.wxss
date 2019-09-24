@@ -1,0 +1,4 @@
+/* pages/calculator/instalment/instalment.wxss */
+.title-show{
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+<!--pages/calculator/instalment/instalment.wxml-->
+<view class="title-show">理性消费，花钱能让你快乐，那攒钱也未尝不可</view>
+
+<view class="calculator-container">
+  <view class="calculator-item">
+    <view>金额</view>
+    <view></view>
+  </view>
+  <view>
+    <view>期数</view>
+    <view></view>
+  </view>
+  <view>
+    <view>渠道/银行</view>
+    <view></view>
+  </view>
+</view>

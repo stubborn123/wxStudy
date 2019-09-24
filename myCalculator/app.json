@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/jsonTest/jsonTest",
+    "pages/calculator/instalment/instalment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text":"首页"
+      },
+      {
+        "pagePath": "pages/calculator/instalment/instalment",
+        "text": "记账薄"
+      },
+      {
+        "pagePath": "pages/calculator/instalment/instalment",
+        "text": "政策信息"
+      },
+      {
+        "pagePath": "pages/calculator/instalment/instalment",
+        "text": "分期计算器"
+      }
+    ]
+  },
+
+  "sitemapLocation": "sitemap.json"
+}
