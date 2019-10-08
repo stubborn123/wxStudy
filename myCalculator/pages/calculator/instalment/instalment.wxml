@@ -1,17 +1,29 @@
 <!--pages/calculator/instalment/instalment.wxml-->
+<view class="main-title">分期计算器</view>
+
 <view class="title-show">理性消费，花钱能让你快乐，那攒钱也未尝不可</view>
 
 <view class="calculator-container">
   <view class="calculator-item">
-    <view>金额</view>
-    <view></view>
+    <view>金额:</view>
+    <view>
+      <input type="digit"></input>
+    </view>
   </view>
-  <view>
-    <view>期数</view>
-    <view></view>
+  <view class="calculator-item">
+    <view>期数:</view>
+    <view>
+      <input></input>
+    </view>
   </view>
-  <view>
-    <view>渠道/银行</view>
-    <view></view>
+  <view class="calculator-item">
+    <view>渠道/银行:</view>
+    <view bindtap="selectChannel" class="channel-choose">选择对应渠道，点击这里</view>
+    <view>
+      <input></input>
+    </view>
   </view>
 </view>
+
+<!-- 下拉框 -->
+
